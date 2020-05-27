@@ -26,13 +26,37 @@
                       "type": "string",
                       "description": "available | notavailable"
                     },
-                    "price": {
-                      "type": "integer"
+                    "result": {
+                      "type": "object",
+                      "properties": {
+                        "price": {
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "price"
+                      ]
                     }
                   },
                   "required": [
                     "message"
                   ]
+                },
+                "examples": {
+                  "example - available": {
+                    "value": {
+                      "message": "available",
+                      "result": {
+                        "price": 330
+                      }
+                    }
+                  },
+                  "example - notavailable": {
+                    "value": {
+                      "message": "notavailable",
+                      "result": []
+                    }
+                  }
                 }
               }
             },
@@ -157,25 +181,24 @@
               "examples": {
                 "Example": {
                   "value": {
-                    "hotelID": 289,
-                    "rate": 51689,
-                    "curr": "CZK",
-                    "currency": "HUF",
-                    "start": "2020-06-14",
-                    "end": "2020-06-16",
+                    "hotelID": 2696,
+                    "rate": 46009,
+                    "curr": "HUF",
+                    "start": "2020-06-06",
+                    "end": "2020-06-08",
                     "nights": 2,
                     "rooms": [
                       {
-                        "id": 4553,
+                        "id": 6104,
                         "adultCount": 2,
                         "childCount": 0,
                         "children_age": ""
                       },
                       {
-                        "id": 4553,
+                        "id": 6104,
                         "adultCount": 2,
-                        "childCount": 2,
-                        "children_age": "4,7"
+                        "childCount": 1,
+                        "children_age": "7"
                       }
                     ]
                   }
@@ -190,6 +213,19 @@
     }
   },
   "components": {
-    "schemas": {}
-  }
+    "schemas": {},
+    "securitySchemes": {
+      "API Key": {
+        "name": "api_token",
+        "type": "apiKey",
+        "in": "query",
+        "description": ""
+      }
+    }
+  },
+  "security": [
+    {
+      "API Key": []
+    }
+  ]
 }

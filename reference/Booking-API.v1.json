@@ -1,0 +1,108 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Booking API",
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "https://www.utazzitthon.hu/api"
+    }
+  ],
+  "paths": {
+    "/availbility": {
+      "post": {
+        "summary": "",
+        "operationId": "post-availbility",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "hotelID": {
+                    "type": "integer"
+                  },
+                  "rate": {
+                    "type": "integer"
+                  },
+                  "curr": {
+                    "type": "string",
+                    "description": "HUF"
+                  },
+                  "start": {
+                    "type": "string",
+                    "description": "yyyy-mm-dd"
+                  },
+                  "end": {
+                    "type": "string",
+                    "description": "yyyy-mm-dd"
+                  },
+                  "nights": {
+                    "type": "integer"
+                  },
+                  "rooms": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "integer"
+                        },
+                        "adultCount": {
+                          "type": "integer"
+                        },
+                        "childCount": {
+                          "type": "integer"
+                        },
+                        "children_age": {
+                          "type": "string",
+                          "description": "\"4,7\" ( comma-separated )"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "examples": {
+                "Example": {
+                  "value": {
+                    "hotelID": 289,
+                    "rate": 51689,
+                    "curr": "CZK",
+                    "currency": "HUF",
+                    "start": "2020-06-14",
+                    "end": "2020-06-16",
+                    "nights": 2,
+                    "rooms": [
+                      {
+                        "id": 4553,
+                        "adultCount": 2,
+                        "childCount": 0,
+                        "children_age": ""
+                      },
+                      {
+                        "id": 4553,
+                        "adultCount": 2,
+                        "childCount": 2,
+                        "children_age": "4,7"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {}
+  }
+}

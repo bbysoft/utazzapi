@@ -12,7 +12,7 @@
   "paths": {
     "/availbility": {
       "post": {
-        "summary": "",
+        "summary": "Check a Availbility",
         "operationId": "post-availbility",
         "responses": {
           "200": {
@@ -22,7 +22,7 @@
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "info": {
+                    "message": {
                       "type": "string",
                       "description": "available | notavailable"
                     },
@@ -31,8 +31,65 @@
                     }
                   },
                   "required": [
-                    "info"
+                    "message"
                   ]
+                }
+              }
+            },
+            "headers": {}
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "message": [
+                        "The hotel i d must be at least 1.",
+                        "The rate must be at least 1."
+                      ],
+                      "result": []
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "message": [
+                        "Unauthenticated."
+                      ]
+                    }
+                  }
                 }
               }
             }
@@ -125,8 +182,10 @@
                 }
               }
             }
-          }
-        }
+          },
+          "description": ""
+        },
+        "description": ""
       }
     }
   },

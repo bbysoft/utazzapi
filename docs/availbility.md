@@ -11,6 +11,7 @@ Field | Type | Description
  nights | integer | nights
  rooms | array | Array of room objects
 
+
 ```json
 {
     "hotelID":289,
@@ -36,3 +37,4 @@ Field | Type | Description
 }
 
 ```
+

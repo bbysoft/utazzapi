@@ -16,7 +16,26 @@
         "operationId": "post-availbility",
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "info": {
+                      "type": "string",
+                      "description": "available | notavailable"
+                    },
+                    "price": {
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "info"
+                  ]
+                }
+              }
+            }
           }
         },
         "requestBody": {
@@ -33,7 +52,7 @@
                   },
                   "curr": {
                     "type": "string",
-                    "description": "HUF"
+                    "description": "HUF | EUR | CZK (default: HUF)"
                   },
                   "start": {
                     "type": "string",
@@ -48,6 +67,7 @@
                   },
                   "rooms": {
                     "type": "array",
+                    "description": "",
                     "items": {
                       "type": "object",
                       "properties": {
@@ -67,7 +87,15 @@
                       }
                     }
                   }
-                }
+                },
+                "required": [
+                  "hotelID",
+                  "rate",
+                  "start",
+                  "end",
+                  "nights",
+                  "rooms"
+                ]
               },
               "examples": {
                 "Example": {

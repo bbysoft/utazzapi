@@ -3,20 +3,36 @@
 
 Field | Type | Description
 ---------|----------|---------
- A1 | B1 | C1
- A2 | B2 | C2
- A3 | B3 | C3
+ hotelID | integer | Hotel ID
+ rate | integer | Rate ID
+ curr | string | Currency ( HUF/EUR/CZK )
+ start | string | Arrival date ( yyyy-mm-dd )
+ end | string | Departue date ( yyyy-mm-dd )
+ nights | integer | nights
+ rooms | array | Array of room objects
 
-
-```xml
-<?xml version="1.0"?>
-<order hotelID="289">
-    <booking action="Availbility" rate="51689" childCount="4" children="2" curr="HUF">
-    <date start="2020-06-14" end="2020-06-16" nights="2"/>
-    <rooms>
-        <room id="4553" childCount="2" childCount="0"/>
-        <room id="4553" childCount="2" children="2" children_age="4,7"/>
-    </rooms>
-</order>
+```json
+{
+    "hotelID":289,
+    "rate": 51689,
+    "curr": "HUF",
+    "start": "2020-06-14",
+    "end": "2020-06-16",
+    "nights": 2,
+    "rooms":[
+        {
+        "id": 4553,
+        "adultCount": 2,
+        "childCount": 0,
+        "children_age": ""
+        },
+        {
+        "id": 4553,
+        "adultCount": 2,
+        "childCount": 2,
+        "children_age": "4,7"
+        }
+    ]
+}
 
 ```

@@ -10,10 +10,10 @@
     }
   ],
   "paths": {
-    "/availbility": {
+    "/booking/availbility": {
       "post": {
         "summary": "Check a Availbility",
-        "operationId": "post-availbility",
+        "operationId": "post-booking-availbility",
         "responses": {
           "200": {
             "description": "OK",
@@ -209,6 +209,200 @@
           "description": ""
         },
         "description": ""
+      },
+      "parameters": []
+    },
+    "/booking/create": {
+      "parameters": [],
+      "post": {
+        "summary": "",
+        "operationId": "post-booking-create",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "result": {
+                      "type": "object",
+                      "required": [
+                        "booking_code"
+                      ],
+                      "properties": {
+                        "booking_code": {
+                          "type": "integer"
+                        }
+                      }
+                    }
+                  },
+                  "required": [
+                    "message",
+                    "result"
+                  ]
+                },
+                "examples": {
+                  "example-success": {
+                    "value": {
+                      "message": "success",
+                      "result": {
+                        "booking_code": 42354
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "hotelID": {
+                    "type": "integer"
+                  },
+                  "rate": {
+                    "type": "integer"
+                  },
+                  "curr": {
+                    "type": "string"
+                  },
+                  "start": {
+                    "type": "string"
+                  },
+                  "end": {
+                    "type": "string"
+                  },
+                  "nights": {
+                    "type": "integer"
+                  },
+                  "price": {
+                    "type": "integer"
+                  },
+                  "payprice": {
+                    "type": "integer"
+                  },
+                  "contact": {
+                    "type": "object",
+                    "required": [
+                      "first_name",
+                      "last_name",
+                      "email",
+                      "phone"
+                    ],
+                    "properties": {
+                      "first_name": {
+                        "type": "string"
+                      },
+                      "last_name": {
+                        "type": "string"
+                      },
+                      "title": {
+                        "type": "string"
+                      },
+                      "email": {
+                        "type": "string"
+                      },
+                      "phone": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "rooms": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "adultCount": {
+                          "type": "string"
+                        },
+                        "childCount": {
+                          "type": "string"
+                        },
+                        "children_age": {
+                          "type": "string"
+                        },
+                        "price": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "adultCount",
+                        "childCount",
+                        "children_age",
+                        "price"
+                      ]
+                    }
+                  },
+                  "comment": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "hotelID",
+                  "rate",
+                  "start",
+                  "end",
+                  "nights",
+                  "price",
+                  "payprice",
+                  "contact",
+                  "rooms"
+                ]
+              },
+              "examples": {
+                "example": {
+                  "value": {
+                    "hotelID": 2696,
+                    "rate": 46009,
+                    "curr": "HUF",
+                    "start": "2020-06-06",
+                    "end": "2020-06-08",
+                    "nights": 2,
+                    "price": 330,
+                    "payprice": 330,
+                    "contact": {
+                      "first_name": "James",
+                      "last_name": "Bond",
+                      "title": "Dr.",
+                      "email": "007@007.com",
+                      "phone": "+36301234567"
+                    },
+                    "rooms": [
+                      {
+                        "id": 6104,
+                        "adultCount": 2,
+                        "childCount": 0,
+                        "children_age": "",
+                        "price": 165
+                      },
+                      {
+                        "id": 6104,
+                        "adultCount": 2,
+                        "childCount": 0,
+                        "children_age": "",
+                        "price": 165
+                      }
+                    ],
+                    "comment": ""
+                  }
+                }
+              }
+            }
+          },
+          "description": ""
+        }
       }
     }
   },

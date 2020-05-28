@@ -14,24 +14,24 @@ Field | Type | Description
 
 ```json
 {
-    "hotelID":289,
-    "rate": 51689,
+    "hotelID": 2696,
+    "rate": 46009,
     "curr": "HUF",
-    "start": "2020-06-14",
-    "end": "2020-06-16",
+    "start": "2020-06-06",
+    "end": "2020-06-08",
     "nights": 2,
-    "rooms":[
+    "rooms": [
         {
-        "id": 4553,
-        "adultCount": 2,
-        "childCount": 0,
-        "children_age": ""
+            "id": 6104,
+            "adultCount": 2,
+            "childCount": 0,
+            "children_age": ""
         },
         {
-        "id": 4553,
-        "adultCount": 2,
-        "childCount": 2,
-        "children_age": "4,7"
+            "id": 6104,
+            "adultCount": 2,
+            "childCount": 1,
+            "children_age": "7"
         }
     ]
 }

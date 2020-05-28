@@ -215,7 +215,7 @@
     "/booking/create": {
       "parameters": [],
       "post": {
-        "summary": "",
+        "summary": "Booking create",
         "operationId": "post-booking-create",
         "responses": {
           "200": {

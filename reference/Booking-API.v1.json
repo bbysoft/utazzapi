@@ -32,10 +32,7 @@
                         "price": {
                           "type": "integer"
                         }
-                      },
-                      "required": [
-                        "price"
-                      ]
+                      }
                     }
                   },
                   "required": [
@@ -54,7 +51,7 @@
                   "example - notavailable": {
                     "value": {
                       "message": "notavailable",
-                      "result": []
+                      "result": {}
                     }
                   }
                 }
@@ -321,19 +318,19 @@
                       "type": "object",
                       "properties": {
                         "id": {
-                          "type": "string"
+                          "type": "integer"
                         },
                         "adultCount": {
-                          "type": "string"
+                          "type": "integer"
                         },
                         "childCount": {
-                          "type": "string"
+                          "type": "integer"
                         },
                         "children_age": {
                           "type": "string"
                         },
                         "price": {
-                          "type": "string"
+                          "type": "integer"
                         }
                       },
                       "required": [

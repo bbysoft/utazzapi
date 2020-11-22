@@ -6,7 +6,8 @@
     "contact": {
       "name": "Taali Attila",
       "email": "bobby@bbysoft.com"
-    }
+    },
+    "description": "Channel manager API"
   },
   "servers": [
     {

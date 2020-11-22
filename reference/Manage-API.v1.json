@@ -74,7 +74,12 @@
           }
         },
         "operationId": "get-manager-hotels",
-        "description": "List all hotels"
+        "description": "List all hotels",
+        "security": [
+          {
+            "sandbox http auth": []
+          }
+        ]
       }
     },
     "/manager/hoteldata": {
@@ -161,7 +166,8 @@
               }
             }
           }
-        }
+        },
+        "parameters": []
       },
       "parameters": []
     }
@@ -173,6 +179,10 @@
         "name": "api_token",
         "type": "apiKey",
         "in": "query"
+      },
+      "sandbox http auth": {
+        "type": "http",
+        "scheme": "basic"
       }
     }
   },

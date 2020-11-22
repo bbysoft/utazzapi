@@ -6,17 +6,23 @@
     "contact": {
       "email": "bobby@bbysoft.com",
       "name": "Tavali Attila"
-    }
+    },
+    "description": "Booking manager API"
   },
   "servers": [
     {
-      "url": "https://www.utazzitthon.hu/api"
+      "url": "https://www.utazzitthon.hu/api",
+      "description": "real"
+    },
+    {
+      "url": "https://deploy.utazzitthon.hu/api",
+      "description": "sandbox"
     }
   ],
   "paths": {
     "/booking/availbility": {
       "post": {
-        "summary": "Check a Availbility",
+        "summary": "Check Availbility",
         "operationId": "post-booking-availbility",
         "responses": {
           "200": {

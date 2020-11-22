@@ -4,20 +4,25 @@
     "title": "Manage-API",
     "version": "1.0",
     "contact": {
-      "name": "Taali Attila",
+      "name": "Tavali Attila",
       "email": "bobby@bbysoft.com"
     },
     "description": "Channel manager API"
   },
   "servers": [
     {
-      "url": "https://www.utazzitthon.hu/api"
+      "url": "https://www.utazzitthon.hu/api",
+      "description": "real"
+    },
+    {
+      "description": "sandbox",
+      "url": "https://deploy.utazzitthon.hu/api"
     }
   ],
   "paths": {
     "/manager/hotels": {
       "get": {
-        "summary": "Your GET endpoint",
+        "summary": "Hotels list",
         "tags": [],
         "responses": {
           "200": {
@@ -69,7 +74,94 @@
           }
         },
         "operationId": "get-manager-hotels",
-        "description": "Utazzitthon channel manager"
+        "description": "List all hotels"
+      }
+    },
+    "/manage/hoteldata": {
+      "post": {
+        "summary": "",
+        "operationId": "post-manage-hoteldata",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "hotelID": {
+                      "type": "integer"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "desc": {
+                      "type": "string"
+                    },
+                    "city": {
+                      "type": "string"
+                    },
+                    "images": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "integer"
+                          },
+                          "desc": {
+                            "type": "string"
+                          },
+                          "url": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "hotelID": 1,
+                      "name": "test hotel 1",
+                      "desc": "description of test hotel 1",
+                      "city": "hotelcity",
+                      "images": [
+                        {
+                          "id": 1,
+                          "desc": "room image",
+                          "url": "http://domain.com/images/hotel.img"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "hotelID": {
+                    "type": "integer"
+                  }
+                }
+              },
+              "examples": {
+                "example-1": {
+                  "value": {
+                    "hotelID": 1
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     }
   },

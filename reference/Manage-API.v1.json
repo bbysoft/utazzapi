@@ -79,7 +79,7 @@
     },
     "/manage/hoteldata": {
       "post": {
-        "summary": "",
+        "summary": "Hotel data",
         "operationId": "post-manage-hoteldata",
         "responses": {
           "200": {

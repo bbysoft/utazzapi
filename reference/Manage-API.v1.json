@@ -77,7 +77,7 @@
         "description": "List all hotels"
       }
     },
-    "/manage/hoteldata": {
+    "/manager/hoteldata": {
       "post": {
         "summary": "Hotel data",
         "operationId": "post-manage-hoteldata",
@@ -162,7 +162,8 @@
             }
           }
         }
-      }
+      },
+      "parameters": []
     }
   },
   "components": {

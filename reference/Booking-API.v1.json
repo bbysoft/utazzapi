@@ -11,10 +11,6 @@
   },
   "servers": [
     {
-      "url": "https://www.utazzitthon.hu/api",
-      "description": "real"
-    },
-    {
       "url": "https://deploy.utazzitthon.hu/api",
       "description": "sandbox"
     }

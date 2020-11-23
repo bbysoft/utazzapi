@@ -11,10 +11,6 @@
   },
   "servers": [
     {
-      "url": "https://www.utazzitthon.hu/api",
-      "description": "real"
-    },
-    {
       "description": "sandbox",
       "url": "https://deploy.utazzitthon.hu/api"
     }
@@ -78,9 +74,6 @@
         "security": [
           {
             "API Key": []
-          },
-          {
-            "sandbox http auth": []
           }
         ]
       }
@@ -182,10 +175,6 @@
         "name": "api_token",
         "type": "apiKey",
         "in": "query"
-      },
-      "sandbox http auth": {
-        "type": "http",
-        "scheme": "basic"
       }
     }
   },

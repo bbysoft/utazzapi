@@ -29,10 +29,10 @@ Field | Type | Description
 ```json
 {
     "hotelID": 2696,
-    "rate": 46009,
+    "rate": 54044,
     "curr": "HUF",
-    "start": "2020-06-06",
-    "end": "2020-06-08",
+    "start": "2020-05-01",
+    "end": "2020-05-01",
     "nights": 2,
     "rooms": [
         {

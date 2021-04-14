@@ -32,7 +32,7 @@ Field | Type | Description
     "rate": 54044,
     "curr": "HUF",
     "start": "2020-05-01",
-    "end": "2020-05-01",
+    "end": "2020-05-02",
     "nights": 2,
     "rooms": [
         {

@@ -184,21 +184,21 @@
               "examples": {
                 "Example": {
                   "value": {
-                    "hotelID": 2696,
+                    "hotelID": 415,
                     "rate": 54044,
                     "curr": "HUF",
-                    "start": "2025-05-01",
-                    "end": "2025-05-03",
+                    "start": "2022-04-19",
+                    "end": "2022-04-21",
                     "nights": 2,
                     "rooms": [
                       {
-                        "id": 6104,
+                        "id": 1831,
                         "adultCount": 2,
                         "childCount": 0,
                         "children_age": ""
                       },
                       {
-                        "id": 6104,
+                        "id": 1831,
                         "adultCount": 2,
                         "childCount": 1,
                         "children_age": "7"

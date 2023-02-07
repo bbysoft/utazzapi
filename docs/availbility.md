@@ -1,30 +1,31 @@
 # Availbility
 
-\* = *required*
+\* = _required_
 
 ## Request
+
 ### Main object
-Field | Type | Description
----------|----------|---------
- hotelID | integer *| Hotel ID
- rate | integer *| Rate ID
- curr | string | Currency ( HUF/EUR/CZK )
- start | string *| Arrival date ( yyyy-mm-dd )
- end | string *| Departue date ( yyyy-mm-dd )
- nights | integer *| nights
- rooms | array *| Array of room objects
+
+| Field   | Type      | Description                  |
+| ------- | --------- | ---------------------------- |
+| hotelID | integer * | Hotel ID                     |
+| rate    | integer * | Rate ID                      |
+| curr    | string    | Currency ( HUF/EUR/CZK )     |
+| start   | string *  | Arrival date ( yyyy-mm-dd )  |
+| end     | string *  | Departue date ( yyyy-mm-dd ) |
+| nights  | integer * | nights                       |
+| rooms   | array *   | Array of room objects        |
 
 ### Room object
 
-Field | Type | Description
----------|----------|---------
- id | integer *| Room ID
- adultCount | integer *| Amount of adults
- childCount | integer *| Cmount of children
- children_age | string *| Ages of children (comma separated) "4,7"
+| Field        | Type      | Description                              |
+| ------------ | --------- | ---------------------------------------- |
+| id           | integer * | Room ID                                  |
+| adultCount   | integer * | Amount of adults                         |
+| childCount   | integer * | Cmount of children                       |
+| children_age | string *  | Ages of children (comma separated) "4,7" |
 
 ## Request example
-
 
 ```json
 {
@@ -51,23 +52,26 @@ Field | Type | Description
 }
 
 ```
+
 ## Response
+
 ### Main object
 
-Field | Type | Description
----------|----------|---------
- message | string *| status message, value: (available / notavailable)
- result | object | Amount of adults
+| Field   | Type     | Description                                       |
+| ------- | -------- | ------------------------------------------------- |
+| message | string * | status message, value: (available / notavailable) |
+| result  | object   | Amount of adults                                  |
 
 ### Result object
 
-Field | Type | Description
----------|----------|---------
- price | integer *| if status available then return price
- 
- ## Response example
+| Field | Type      | Description                           |
+| ----- | --------- | ------------------------------------- |
+| price | integer * | if status available then return price |
+
+## Response example
 
 Available
+
 ```json
 {
     "message": "available",
@@ -77,7 +81,9 @@ Available
 }
 
 ```
+
 Not available
+
 ```json
 {
     "message": "notavailable"  

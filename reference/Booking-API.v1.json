@@ -407,6 +407,66 @@
           "description": ""
         }
       }
+    },
+    "/booking/cancel": {
+      "parameters": [],
+      "post": {
+        "summary": "Booking cancel",
+        "operationId": "post-booking-cancel",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "message"
+                  ]
+                },
+                "examples": {
+                  "example-success": {
+                    "value": {
+                      "message": "success"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "booking_code": {
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "booking_code"
+                ]
+              },
+              "examples": {
+                "example": {
+                  "value": {
+                    "booking_code": 0
+                  }
+                }
+              }
+            }
+          },
+          "description": ""
+        },
+        "description": ""
+      }
     }
   },
   "components": {

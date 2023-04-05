@@ -13,6 +13,10 @@
     {
       "url": "https://dev.connect.utazzitthon.hu/api",
       "description": "sandbox"
+    },
+    {
+      "url": "https://connect.utazzitthon.hu/api",
+      "description": "real"
     }
   ],
   "paths": {
@@ -58,6 +62,14 @@
                     "value": {
                       "message": "notavailable",
                       "result": {}
+                    }
+                  },
+                  "on request": {
+                    "value": {
+                      "message": "on request",
+                      "result": {
+                        "price": 330
+                      }
                     }
                   }
                 }
